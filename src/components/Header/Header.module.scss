@@ -1,0 +1,54 @@
+@import "./../../styles/pxToRem";
+@import "./../../styles/media";
+
+.wrapper {
+  width: 100%;
+  height: rem(72px);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: rem(1699px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    padding: rem(4px);
+    width: rem(183px);
+    height: rem(48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include desktop-l {
+      width: rem(39px);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      path:last-of-type {
+
+        @include desktop-l {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.logo__picture {
+
+}
