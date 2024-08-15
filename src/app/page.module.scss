@@ -1,3 +1,13 @@
+@import "./../styles/pxToRem";
+
 .main {
   width: 100%;
+}
+
+.test {
+  width: 100%;
+  height: calc(100vh - rem(72px));
+  position: relative;
+  z-index: 1;
+  background-color: black;
 }

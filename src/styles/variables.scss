@@ -1,11 +1,27 @@
 :root {
+  --color-neutral: rgb(255, 255, 255);
   --color-nav-title: rgb(84, 95, 126);
+  --color-nav-title-hover: rgb(37, 46, 72);
+
+  --color-dropdown-subtitle: rgb(118, 131, 168);
+  --color-arrow: rgb(193, 201, 224);
+  --color-browse: rgb(50, 113, 230);
+
   --color-dropdown-title: rgb(84, 95, 126);
   --color-dropdown-title-hover: rgb(37, 46, 72);
-  --color-dropdown-title-bg: rgb(238, 245, 255);
-  --color-dropdown-title-bg-hover: rgb(207, 224, 255);
-}
 
-//:root {
-//  --tablet-xxl: 1025px;
-//}
+  --color-videos-title-bg: rgb(238, 245, 255);
+  --color-videos-title-bg-hover: rgb(207, 224, 255);
+
+  --color-websites-title-bg: rgb(251, 244, 255);
+  --color-websites-title-bg-hover: rgb(243, 225, 253);
+
+  --color-logos-title-bg: rgb(255, 250, 223);
+  --color-logos-title-bg-hover: rgb(250, 241, 192);
+
+  --color-mockups-title-bg: rgb(236, 255, 248);
+  --color-mockups-title-bg-hover: rgb(213, 250, 236);
+
+  --color-graphics-title-bg: rgb(255, 241, 248);
+  --color-graphics-title-bg-hover: rgb(251, 217, 234);
+}

@@ -1,4 +1,13 @@
+@import "./../../styles/pxToRem";
+
 .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
   height: 100%;
   display: flex;
   align-items: center;
@@ -12,4 +21,77 @@
   list-style-type: none;
   display: flex;
   align-items: center;
+}
+
+.point {
+  padding: 0 rem(12px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+
+  &:first-child {
+    margin-inline-start: auto;
+  }
+
+  &:hover {
+    .point__title, .point__link {
+      color: var(--color-nav-title-hover);
+    }
+  }
+}
+
+.point__link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: inherit;
+}
+
+.point__title, .point__link {
+  font-size: rem(14px);
+  font-weight: 700;
+  line-height: rem(17px);
+  color: var(--color-nav-title);
+  transition: all .3s ease;
+}
+
+.point__title {
+  display: inline-block;
+}
+
+.point__icon {
+  margin-inline-start: rem(4px);
+  width: rem(24px);
+  height: rem(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  vertical-align: bottom;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    fill: var(--color-nav-title);
+  }
+}
+
+.point__logo {
+  width: rem(30px);
+  height: rem(30px);
+  border-radius: 50%;
+  overflow: hidden;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
 }

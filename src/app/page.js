@@ -16,6 +16,7 @@ export default function Home() {
     //   </div>
       <main className={s.main}>
         <Header />
+        <div className={s.test}></div>
       </main>
   );
 }
