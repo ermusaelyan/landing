@@ -1,86 +1,43 @@
 @import "./../../../../styles/pxToRem";
+@import "./../../../../styles/media";
+@import "./../../../../styles/common";
 
-.name {
-  font-size: rem(14px);
-  font-weight: 700;
-  line-height: rem(17px);
-  color: var(--color-nav-title);
-  text-transform: capitalize;
-  transition: all .3s ease;
-}
+.wrapper {
+  @extend .nav-item;
 
-.caret {
-  margin-inline-start: rem(4px);
-  width: rem(24px);
-  height: rem(24px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .3s ease;
-  vertical-align: bottom;
-
-  svg {
+  @include tablet-l {
+    position: static;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    fill: var(--color-nav-title);
+    height: rem(60px);
+    border-bottom: 1px solid var(--color-videos-title-bg);
   }
 }
 
 .trigger {
-  padding: 0 rem(12px);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
-}
+  @extend .trigger;
 
-.dropdown {
-  padding: rem(24px) rem(24px) rem(20px);
-  background-color: var(--color-neutral);
-  box-shadow: 0 2px rem(12px) 0 rgba(0, 82, 224, 0.12);
-  border-radius: rem(16px);
-  min-width: rem(240px);
-  position: absolute;
-  top: 100%;
-  left: rem(-30px);
-  transition: all .3s ease;
-  visibility: hidden;
-  opacity: 0;
-
-  &::before {
-    content: '';
-    display: block;
-    width: calc(100% + rem(20px));
-    height: calc(100% + rem(10px));
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(rem(-10px), 0);
-    z-index: -1;
+  @include tablet-l {
+    display: none;
   }
 }
 
-.wrapper {
-  height: 100%;
-  position: relative;
+.dropdown {
+  @extend .dropdown;
 
-  &:hover {
+  @include tablet-l {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: unset;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
 
-    .name {
-      color: var(--color-nav-title-hover);
-    }
-
-    .caret {
-      transform: matrix(1, 0, 0, -1, 0, 0);
-    }
-
-    .dropdown {
-      z-index: 2;
-      visibility: visible;
-      opacity: 1;
+    &::before {
+      display: none;
     }
   }
 }
@@ -170,17 +127,121 @@
       transform: translateX(rem(4px));
       color: var(--color-dropdown-title-hover);
   }
+
+  @include tablet-l {
+    height: 100%;
+    padding: 0 rem(20px);
+    border-radius: 0;
+    background-color: transparent !important;
+  }
+}
+
+.wrap {
+  @include tablet-l {
+    position: fixed;
+    top: rem(72px);
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    transform: translateX(100%);
+    background-color: var(--color-neutral);
+    transition: all .3s ease;
+    width: 360px;
+    overflow-y: auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &.open {
+    @include tablet-l {
+      transform: translateX(0);
+    }
+  }
 }
 
 .dropdown__body {
   margin: rem(24px) 0 rem(20px);
   display: flex;
   gap: rem(48px);
+
+  @include tablet-l {
+    margin: 0;
+    display: block;
+    gap: unset;
+  }
+}
+
+.side {
+  display: none;
+
+  @include tablet-l {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: rem(60px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-sign-border);
+    background-color: var(--color-side-bg);
+  }
+}
+
+.side__button {
+  padding: rem(10px) 0;
+  width: rem(40px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+
+.side__link {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+
+  color: var(--color-dropdown-title-hover);
+  font-weight: 600;
+  font-size: rem(14px);
+  text-decoration: none;
+}
+
+.side__icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .dropdown__wrap {
   padding: 0 rem(6px);
   position: relative;
+
+  @include tablet-l {
+    position: static;
+    padding: 0 rem(16px);
+
+    &:last-child li {
+      border: none;
+    }
+  }
 
   &:not(:first-child)::before {
     position: absolute;
@@ -191,6 +252,10 @@
     display: inline-block;
     width: 1px;
     background-color: var(--color-arrow);
+
+    @include tablet-l {
+      display: none;
+    }
   }
 }
 
@@ -200,46 +265,34 @@
   font-weight: 600;
   line-height: rem(17px);
   color: var(--color-dropdown-subtitle);
-}
 
-.dropdown__list, .ai__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  @include tablet-l {
+    margin: rem(16px) 0 rem(12px);
+  }
 }
 
 .dropdown__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   column-gap: rem(32px);
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-auto-flow: column;
-}
 
-.ai__list {
-  padding-bottom: rem(4px);
-  min-width: rem(330px);
+  @include tablet-l {
+    display: block;
+  }
 }
 
 .dropdown__item {
   width: 100%;
-}
 
-.dropdown__navLink {
-  padding: rem(8px) 0;
-  display: inline-block;
-  font-size: rem(15px);
-  font-weight: 500;
-  line-height: rem(18px);
-  white-space: nowrap;
-  text-decoration: none;
-  color: var(--color-nav-title);
-  cursor: pointer;
-  transition: all .3s ease;
-
-
-  &:hover {
-    transform: translateX(rem(4px));
-    color: var(--color-dropdown-title-hover);
+  @include tablet-l {
+    &:last-of-type {
+      padding-bottom: rem(16px);
+      border-bottom: 1px solid var(--color-arrow);
+    }
   }
 }
 
@@ -247,6 +300,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include tablet-l {
+    margin-top: auto;
+    border-top: 1px solid var(--color-arrow);
+  }
 }
 
 .browse__title {
@@ -286,5 +344,10 @@
 
   &:hover .browse__icon {
     transform: translateX(4px);
+  }
+
+  @include tablet-l {
+    width: 100%;
+    padding: rem(20px) 0 rem(24);
   }
 }

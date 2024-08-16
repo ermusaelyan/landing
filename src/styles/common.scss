@@ -1,0 +1,116 @@
+@import "./media";
+@import "./pxToRem";
+
+.nav-item {
+  height: 100%;
+  position: relative;
+
+  @media (hover: hover) {
+    &:hover {
+      .name {
+        color: var(--color-nav-title-hover);
+      }
+
+      .caret {
+        transform: matrix(1, 0, 0, -1, 0, 0);
+      }
+
+      .dropdown {
+        z-index: 2;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.trigger {
+  padding: 0 rem(12px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+
+  @include desktop-m {
+    padding: 0 rem(8);
+  }
+}
+
+.name {
+  font-size: rem(14px);
+  font-weight: 700;
+  line-height: rem(17px);
+  color: var(--color-nav-title);
+  text-transform: capitalize;
+  transition: all .3s ease;
+
+  @include desktop-m {
+    font-weight: 500;
+  }
+}
+
+.caret {
+  margin-inline-start: rem(4px);
+  width: rem(24px);
+  height: rem(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  vertical-align: bottom;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    fill: var(--color-nav-title);
+  }
+}
+
+.dropdown {
+  padding: rem(24px) rem(24px) rem(20px);
+  background-color: var(--color-neutral);
+  box-shadow: 0 2px rem(12px) 0 rgba(0, 82, 224, 0.12);
+  border-radius: rem(16px);
+  min-width: rem(240px);
+  position: absolute;
+  top: 100%;
+  left: rem(-30px);
+  transition: all .3s ease;
+  visibility: hidden;
+  opacity: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% + rem(20px));
+    height: calc(100% + rem(10px));
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(rem(-10px), 0);
+    z-index: -1;
+  }
+}
+
+.dropdown__navLink {
+  padding: rem(8px) 0;
+  display: inline-block;
+  font-size: rem(15px);
+  font-weight: 500;
+  line-height: rem(18px);
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--color-nav-title);
+  cursor: pointer;
+  transition: all .3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateX(rem(4px));
+      color: var(--color-dropdown-title-hover);
+    }
+  }
+}

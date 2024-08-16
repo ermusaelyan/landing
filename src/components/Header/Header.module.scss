@@ -2,12 +2,18 @@
 @import "./../../styles/media";
 
 .wrapper {
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   height: rem(72px);
+  background-color: var(--color-neutral);
+  z-index: 3;
 }
 
 .container {
   margin: 0 auto;
+  padding: 0 rem(30px);
   max-width: rem(1699px);
   height: 100%;
   display: flex;
@@ -24,6 +30,7 @@
     padding: rem(4px);
     width: rem(183px);
     height: rem(48px);
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
