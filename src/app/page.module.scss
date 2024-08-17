@@ -4,11 +4,12 @@
   width: 100%;
 }
 
-.test {
-  display: none;
-  width: 100%;
-  height: calc(100vh - rem(72px));
+
+.wrapper {
+  margin: 0 auto;
+  padding: rem(72px) rem(30px) rem(135px);
+  max-width: rem(1856px);
   position: relative;
   z-index: 1;
-  background-color: black;
+  background-color: var(--color-main-bg);
 }

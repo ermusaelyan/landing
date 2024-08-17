@@ -1,0 +1,47 @@
+@import "./../../../../styles/pxToRem";
+
+.wrapper {
+  padding: rem(32px) rem(56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(56px);
+  border-radius: rem(30px);
+  background-image: linear-gradient(135.78deg, #FFFFFF 33.22%, rgba(255, 255, 255, 0.24) 98.34%);
+
+  &:not(:last-child) {
+    margin-bottom: rem(56px);
+  }
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+}
+
+.content {
+  width: 50%;
+  max-width: rem(530px);
+}
+
+.title {
+  margin-bottom: rem(16px);
+  font-size: rem(32px);
+  font-weight: 700;
+  line-height: rem(39px);
+  color: var(--color-nav-title-hover);
+}
+
+.description {;
+  font-size: rem(16px);
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-nav-title-hover);
+}
+
+.image {
+  max-width: rem(532px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

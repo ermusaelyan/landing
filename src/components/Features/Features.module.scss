@@ -1,0 +1,25 @@
+@import "./../../styles/pxToRem";
+
+.wrapper {
+  margin-top: rem(48px);
+  padding: rem(56px) rem(171px);
+  background-color: var(--color-feature-bg);
+  border-radius: rem(32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  max-width: rem(900px);
+  font-size: rem(36px);
+  font-weight: 700;
+  line-height: rem(43.88px);
+  text-align: center;
+  color: var(--color-nav-title-hover);
+}
+
+.cards {
+  margin-top: rem(56px);
+}

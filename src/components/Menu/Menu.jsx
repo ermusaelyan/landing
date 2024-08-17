@@ -11,28 +11,32 @@ const titles = ['videos', 'websites', 'logos', 'mockups', 'graphics'];
 
 const Menu = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [isAiOpen, setIsAiOpen] = useState(false);
+
     return (
         <div className={s.wrapper}>
-            <div className={classNames(s.point, s.create)} onClick={() => setIsNavOpen(prevState => !prevState)}>
+            <div className={classNames(s.point, s.nav, {[s.open] : isNavOpen})} onClick={() => setIsNavOpen(prevState => !prevState)}>
                 <div className={s.trigger}>
                     <div className={s.name}>Create</div>
-                    <div className={classNames(s.caret, {[s.open] : isNavOpen})}><ArrowIcon /></div>
+                    <div className={s.caret}><ArrowIcon /></div>
+                </div>
+                <div className={s.dropdown}>
+                    <nav className={s.nav}>
+                        <ul className={s.list}>
+                            {titles.map(title => (
+                                <MenuItem key={title} title={title} />
+                            ))}
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <nav className={classNames(s.nav, {[s.open] : isNavOpen})}>
-                <ul className={s.list}>
-                    {titles.map(title => (
-                        <MenuItem key={title} title={title} />
-                    ))}
-                </ul>
-            </nav>
-            <div className={s.ai}>
+            <div className={classNames(s.point, s.ai, {[s.open] : isAiOpen})} onClick={() => setIsAiOpen(prevState => !prevState)}>
                 <div className={s.trigger}>
                     <div className={s.name}>Explore AI</div>
                     <div className={s.caret}><ArrowIcon /></div>
                 </div>
                 <div className={s.dropdown}>
-                    <ul className={s.ai__list}>
+                    <ul className={s.dropdown__list}>
                         <li className={s.dropdown__item}>
                             <a href="#" className={s.dropdown__navLink}>Business Name Generator</a>
                         </li>
@@ -44,7 +48,7 @@ const Menu = () => {
             </div>
             <div className={s.point}>
                 <div className={s.trigger}>
-                    <a>pricing</a>
+                    <a>Pricing</a>
                 </div>
             </div>
             <div className={s.point}>

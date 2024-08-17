@@ -6,6 +6,7 @@ import ArrowIcon from "@/icons/ArrowIcon.jsx";
 import VideoIcon from "@/icons/VideoIcon.jsx";
 import BrowseIcon from "@/icons/BrowseIcon.jsx";
 import classNames from "classnames";
+import SideIcon from "@/icons/SideIcon.jsx";
 
 const sections = ['Categories', 'Featured'];
 const items = {
@@ -28,6 +29,9 @@ const MenuItem = ({ title }) => {
                     <a className={s.dropdown__link}>
                         <span className={s.dropdown__icon}><VideoIcon /></span>
                         <span className={s.dropdown__title}>Create Video</span>
+                        <span className={s.dropdown__open}>
+                            <SideIcon />
+                        </span>
                     </a>
                 </div>
                 <div className={classNames(s.wrap, {[s.open]: isOpen })}>
@@ -35,7 +39,7 @@ const MenuItem = ({ title }) => {
                         <div className={s.side}>
                             <button className={s.side__button} onClick={() => setIsOpen(false)}>
                             <span className={s.side__icon}>
-                            <ArrowIcon />
+                            <SideIcon />
                         </span>
                             </button>
                             <a href="#" className={s.side__link}>Create video</a>

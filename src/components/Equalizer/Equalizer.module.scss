@@ -1,0 +1,56 @@
+@import "./../../styles/pxToRem";
+
+$bar-width: 6px;
+$bar-count: 50;
+$bar-spacing: 4px;
+$min-height: 20%;
+$max-height: 100%;
+$animation-duration: 1.2s;
+$equalizer-width: 100%;
+$equalizer-height: rem(56px);
+
+@keyframes stretch {
+  0%, 100% {
+    height: $min-height;
+  }
+  50% {
+    height: $max-height;
+  }
+}
+
+.wrapper {
+  margin-inline-start: 10%;
+  width: 80%;
+  overflow: hidden;
+}
+
+.equalizer {
+  display: flex;
+  justify-content: space-between;
+  gap: $bar-spacing;
+  width: $equalizer-width;
+  height: $equalizer-height;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+
+  .bar {
+    background-color: var(--color-neutral-5);
+    height: $min-height;
+    width: $bar-width;
+    animation: stretch $animation-duration infinite ease-out;
+    transform-origin: bottom;
+    flex-shrink: 0;
+
+    @for $i from 1 through $bar-count {
+      &:nth-child(#{$i}) {
+        animation-delay: #{random(1000) / 1000}s;
+      }
+    }
+  }
+}
+
+
+
+
+
+
