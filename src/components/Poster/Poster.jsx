@@ -15,14 +15,16 @@ const Poster = () => {
                 <div className={s.content}>
                     <Equalizer />
                     <div className={s.image}>
-                        <NextImage
-                            src={posterImage}
-                            alt="Sound Wave Generator"
-                            layout="responsive"
-                            width={782}
-                            height={434}
-                            priority={true}
-                        />
+                        <div className={s.image__container}>
+                            <NextImage
+                                src={posterImage}
+                                alt="Sound Wave Generator"
+                                width={782}
+                                height={434}
+                                style={{ width: '100%', height: '100%' }}
+                                priority={true}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

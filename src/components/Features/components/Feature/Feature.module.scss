@@ -56,7 +56,7 @@
     line-height: rem(32px);
   }
 
-  @include tablet-m {
+  @include mobile-l {
     margin-bottom: rem(20px);
     font-size: rem(22px);
     line-height: rem(32px);
@@ -77,23 +77,37 @@
 }
 
 .image {
-  max-width: rem(532px);
+  width: rem(532px);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &::after {
+    content: '';
+    display: block;
+    padding-top: 62.96%;
+  }
 
   @include tablet-m {
     max-width: 40%;
   }
 
   @include tablet-m {
-    max-width: 80%;
-    width: 80%;
+    max-width: 70%;
+    width: 70%;
   }
 
-  @include tablet-m {
+  @include mobile-m {
     max-width: 100%;
     width: 100%;
   }
+}
+
+.image__container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

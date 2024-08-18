@@ -11,14 +11,15 @@ const Feature = () => {
                 <p className={s.description}>Each music and audio project has its own ambiance. With the huge library of templates to choose from, our Sound Wave Generator lets you find and customize a soundwave animation that matches your project’s unique style.</p>
             </div>
             <div className={s.image}>
-                <NextImage
-                    src={featureImage}
-                    alt="Large Library"
-                    layout="responsive"
-                    width={532}
-                    height={330}
-                    priority={true}
-                />
+                <div className={s.image__container}>
+                    <NextImage
+                        src={featureImage}
+                        alt="Large Library"
+                        width={532}
+                        height={330}
+                        style={{ width: '100%', height: '100%' }}
+                    />
+                </div>
             </div>
         </article>
     );
