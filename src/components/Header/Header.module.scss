@@ -9,6 +9,10 @@
   height: rem(72px);
   background-color: var(--color-neutral);
   z-index: 3;
+
+  @include tablet-l {
+    box-shadow: 0 rem(6px) rem(6px) rgba(0, 82, 224, .1);
+  }
 }
 
 .container {
@@ -57,6 +61,84 @@
     }
   }
 }
+
+.menuToggler {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet-l {
+    display: flex;
+  }
+}
+
+.menuToggle {
+  position: relative;
+  border: none;
+  background: transparent;
+  width: rem(49px);
+  height: rem(49px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  column-gap: rem(10px);
+
+  &.expanded {
+    .line {
+      top: rem(16px);
+
+      &:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+
+  .line {
+    display: block;
+    height: 3px;
+    width: rem(32px);
+    background: var(--color-burger-menu);
+    transition: all 0.3s ease;
+    position: absolute;
+    border-radius: 4px;
+    transform: rotate(0deg);
+
+    &:first-child {
+      top: rem(10px);
+
+      @include tablet-m {
+        top: rem(9px);
+      }
+    }
+
+    &:last-child {
+      top: rem(27px);
+    }
+  }
+}
+
+.menuShape {
+  background-image: var(--color-dropdown-title-hover-4);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: rem(72px);
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.menuClose {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+
 
 
 

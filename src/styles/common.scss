@@ -48,6 +48,10 @@
   @include desktop-m {
     font-weight: 500;
   }
+
+  @include tablet-l {
+    font-size: rem(17px);
+  }
 }
 
 .caret {
@@ -133,5 +137,9 @@
       transform: translateX(rem(4px));
       color: var(--color-dropdown-title-hover);
     }
+  }
+
+  @include tablet-l {
+    font-size: rem(17px);
   }
 }

@@ -1,4 +1,5 @@
 @import "./../../styles/pxToRem";
+@import "./../../styles/media";
 
 .wrapper {
   margin-top: rem(48px);
@@ -9,6 +10,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include desktop-l {
+    padding: rem(56px) rem(112px);
+  }
+
+  @include desktop-m {
+    padding: rem(56px) rem(84px);
+  }
+
+  @include tablet-l {
+    padding: rem(48px) rem(56px);
+  }
+
+  @include tablet-m {
+    padding: rem(50px) rem(20px);
+  }
 }
 
 .title {
@@ -18,6 +35,15 @@
   line-height: rem(43.88px);
   text-align: center;
   color: var(--color-nav-title-hover);
+
+  @include tablet-l {
+    font-size: rem(28px);
+    line-height: rem(36px);
+  }
+
+  @include tablet-m {
+    font-size: rem(30px);
+  }
 }
 
 .cards {

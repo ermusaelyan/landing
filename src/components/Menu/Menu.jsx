@@ -9,12 +9,12 @@ import classNames from "classnames";
 
 const titles = ['videos', 'websites', 'logos', 'mockups', 'graphics'];
 
-const Menu = () => {
+const Menu = ({ openMenu }) => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isAiOpen, setIsAiOpen] = useState(false);
 
     return (
-        <div className={s.wrapper}>
+        <div className={classNames(s.wrapper, {[s.open] : openMenu})}>
             <div className={classNames(s.point, s.nav, {[s.open] : isNavOpen})} onClick={() => setIsNavOpen(prevState => !prevState)}>
                 <div className={s.trigger}>
                     <div className={s.name}>Create</div>

@@ -1,16 +1,26 @@
 @import "./../../styles/pxToRem";
+@import "./../../styles/media";
 
 .wrapper {
   padding: rem(27px) 0 rem(24px);
   border-top: 1px solid var(--color-arrow);
+
+  @include tablet-m {
+    padding: rem(38px) 0 rem(47px);
+  }
 }
 
 .container {
   margin: 0 auto;
+  max-width: rem(1856px);
   padding: 0 rem(30px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include tablet-m {
+    flex-direction: column;
+  }
 }
 
 .logo {
@@ -28,6 +38,11 @@
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
+
+  @include tablet-m {
+    width: rem(200px);
+    height: rem(56px);
+  }
 }
 
 .logo__icon {
@@ -40,13 +55,15 @@
   svg {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 }
 
 .copyright {
-
+  @include tablet-m {
+    margin: rem(18px) 0 rem(24px);
+  }
 }
 
 .social__list {
@@ -60,7 +77,11 @@
   justify-content: center;
 
   &:not(:last-child) {
-    margin-right: rem(25px);
+    margin-inline-end: rem(25px);
+
+    @include tablet-m {
+      margin-inline-end: rem(18px);
+    }
   }
 }
 
@@ -78,6 +99,11 @@
        fill: var(--color-dropdown-title);
      }
   }
+
+  @include tablet-m {
+    width: rem(40px);
+    height: rem(36px);
+  }
 }
 
 .social__icon {
@@ -94,5 +120,6 @@
     object-position: center;
     fill: var(--color-dropdown-title-hover);
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
 }

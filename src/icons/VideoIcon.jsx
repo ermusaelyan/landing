@@ -2,18 +2,14 @@ import * as React from "react"
 const SvgComponent = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={32}
-        height={32}
-        fill="none"
         {...props}
     >
-        <g filter="url(#a)">
             <rect width={32} height={32} fill="url(#b)" rx={10} />
             <path
+                filter="url(#a)"
                 fill="#fff"
                 d="M11.707 23.071a3.598 3.598 0 0 1-3.7-3.829v-6.485a3.601 3.601 0 0 1 3.7-3.829h5.212a3.597 3.597 0 0 1 3.7 3.83v6.485a3.6 3.6 0 0 1-3.7 3.828h-5.212Zm12.455-2.243-1.331-.705a1.542 1.542 0 0 1-.8-1.374v-5.5a1.536 1.536 0 0 1 .8-1.371l1.332-.706a1.197 1.197 0 0 1 1.235.06A1.367 1.367 0 0 1 26 12.381v7.238a1.366 1.366 0 0 1-.602 1.15 1.199 1.199 0 0 1-1.236.06Z"
             />
-        </g>
         <defs>
             <linearGradient
                 id="b"

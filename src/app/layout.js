@@ -5,7 +5,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Sound Wave Generator",
-  description: "Renderforest AI Video Generator eliminates the technical complexities, empowering anyone to create professional-looking videos that resonate with their audience. So, skip the studio, unleash your creativity, and let AI transform your ideas into stunning video reality!",
+  description: "Add sound waves to your music videos with Renderforest's free Sound Wave Generator. Create stunning animated sound waves instantly.",
   icons: {
     icon: "/logo.svg",
   },

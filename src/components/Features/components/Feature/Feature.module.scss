@@ -1,4 +1,5 @@
 @import "./../../../../styles/pxToRem";
+@import "./../../../../styles/media";
 
 .wrapper {
   padding: rem(32px) rem(56px);
@@ -11,16 +12,36 @@
 
   &:not(:last-child) {
     margin-bottom: rem(56px);
+
+    @include tablet-m {
+      margin-bottom: rem(40px);
+    }
   }
 
   &:nth-child(2n) {
     flex-direction: row-reverse;
+
+    @include tablet-m {
+      flex-direction: column-reverse;
+    }
   }
+
+  @include tablet-m {
+    gap: rem(20px);
+    padding: rem(24px) rem(37px);
+    flex-direction: column-reverse;
+  }
+
 }
 
 .content {
   width: 50%;
   max-width: rem(530px);
+
+  @include tablet-m {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .title {
@@ -29,6 +50,17 @@
   font-weight: 700;
   line-height: rem(39px);
   color: var(--color-nav-title-hover);
+
+  @include tablet-l {
+    font-size: rem(24px);
+    line-height: rem(32px);
+  }
+
+  @include tablet-m {
+    margin-bottom: rem(20px);
+    font-size: rem(22px);
+    line-height: rem(32px);
+  }
 }
 
 .description {;
@@ -36,6 +68,12 @@
   font-weight: 500;
   line-height: 24px;
   color: var(--color-nav-title-hover);
+
+
+  @include tablet-m {
+    font-size: rem(17px);
+    line-height: rem(22px);
+  }
 }
 
 .image {
@@ -44,4 +82,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include tablet-m {
+    max-width: 40%;
+  }
+
+  @include tablet-m {
+    max-width: 80%;
+    width: 80%;
+  }
+
+  @include tablet-m {
+    max-width: 100%;
+    width: 100%;
+  }
 }

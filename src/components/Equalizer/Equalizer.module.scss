@@ -1,4 +1,5 @@
 @import "./../../styles/pxToRem";
+@import "./../../styles/media";
 
 $bar-width: 6px;
 $bar-count: 50;
@@ -22,6 +23,14 @@ $equalizer-height: rem(56px);
   margin-inline-start: 10%;
   width: 80%;
   overflow: hidden;
+
+  @include tablet-l {
+    width: 65.7%;
+  }
+
+  @include mobile-m {
+    width: 80%;
+  }
 }
 
 .equalizer {

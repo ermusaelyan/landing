@@ -1,8 +1,13 @@
 @import "./../../styles/pxToRem";
+@import "./../../styles/media";
 
 .wrapper {
   padding: rem(32px) 0;
   width: 100%;
+
+  @include tablet-l {
+    padding: rem(50px) 0 0;
+  }
 }
 
 .container {
@@ -14,6 +19,22 @@
   background: radial-gradient(81.41% 207.84% at 17.81% 36.38%, #EFF8FF 0%, #B6DBFD 45.08%, #9ACEFF 61.89%, #6272FF 100%);
   border-radius: rem(32px);
   gap: rem(100px);
+
+  @include tablet-l {
+    padding: rem(90px) rem(100px);
+  }
+
+  @include tablet-m {
+    padding: rem(56px);
+    flex-direction: column;
+    gap: rem(32px);
+  }
+
+  @include mobile-l {
+    padding: rem(50px) rem(20px);
+    flex-direction: column;
+    gap: rem(32px);
+  }
 }
 
 .content {
@@ -27,6 +48,10 @@
     flex-direction: column;
     align-items: center;
   }
+
+  @include mobile-l {
+    text-align: center;
+  }
 }
 
 .title {
@@ -35,6 +60,16 @@
   font-weight: 700;
   line-height: rem(68px);
   color: var(--color-nav-title-hover);
+
+  @include tablet-l {
+    font-size: rem(48px);
+    line-height: rem(48px);
+  }
+
+  @include mobile-l {
+    font-size: rem(40px);
+    line-height: rem(50px);
+  }
 }
 
 .description {
@@ -44,6 +79,22 @@
   line-height: rem(24px);
   text-align: left;
   color: var(--color-nav-title-hover);
+
+  @include tablet-l {
+    font-size: rem(14px);
+    line-height: rem(20px);
+  }
+
+  @include mobile-l {
+    margin: rem(20px) rem(40px);
+    font-size: rem(17px);
+    line-height: rem(24px);
+    text-align: center;
+  }
+
+  @include mobile-m {
+    margin: rem(20px) 0;
+  }
 }
 
 .link {
@@ -60,9 +111,27 @@
   line-height: rem(22px);
   text-align: center;
   color: var(--color-neutral);
+
+  @include mobile-l {
+    padding: rem(22px) 0;
+    width: rem(404px);
+    font-size: rem(22px);
+  }
+
+  @include mobile-m {
+    width: 100%;
+  }
 }
 
 .image {
   margin-top: -2%;
   width: 100%;
+
+  @include tablet-m {
+    width: 80%;
+  }
+
+  @include mobile-m {
+    width: 100%;
+  }
 }
