@@ -81,7 +81,7 @@
   min-width: rem(240px);
   position: absolute;
   top: 100%;
-  left: rem(-30px);
+  inset-inline-start: rem(-30px);
   transition: all .3s ease;
   visibility: hidden;
   opacity: 0;
@@ -110,7 +110,7 @@
     height: calc(100% + rem(10px));
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     transform: translate(rem(-10px), 0);
     z-index: -1;
 

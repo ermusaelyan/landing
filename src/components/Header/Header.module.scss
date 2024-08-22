@@ -4,8 +4,8 @@
 .wrapper {
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
   height: rem(72px);
   background-color: var(--color-neutral);
   z-index: 3;
@@ -127,9 +127,9 @@
   backdrop-filter: blur(2px);
   position: fixed;
   top: rem(72px);
-  right: 0;
+  inset-inline-end: 0;
   bottom: 0;
-  left: 0;
+  inset-inline-start: 0;
 }
 
 .menuClose {
